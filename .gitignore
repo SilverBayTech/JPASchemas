@@ -1,3 +1,7 @@
+.project
+.classpath
+.settings
+*.swp
 target/
 pom.xml.tag
 pom.xml.releaseBackup

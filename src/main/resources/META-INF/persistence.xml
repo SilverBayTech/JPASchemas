@@ -1,0 +1,83 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+	version="2.1">
+
+	<persistence-unit name="script">
+		<description>In-memory persistence unit for the JPA 2.1 Schema Generation blog post</description>
+		
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+		<class>com.silverbaytech.blog.jpaschema.model.User</class>
+		<class>com.silverbaytech.blog.jpaschema.model.Comment</class>
+
+		<properties>
+		    <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:jpaschema" />
+		</properties>
+
+	</persistence-unit>
+
+	<persistence-unit name="database1">
+		<description>On-disk persistence unit for the JPA 2.1 Schema Generation blog post</description>
+		
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+		<class>com.silverbaytech.blog.jpaschema.model.User</class>
+		<class>com.silverbaytech.blog.jpaschema.model.Comment</class>
+
+		<properties>
+		    <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:h2:./target/databaseExample1" />
+		</properties>
+
+	</persistence-unit>
+
+	<persistence-unit name="database2">
+		<description>On-disk persistence unit for the JPA 2.1 Schema Generation blog post</description>
+		
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+		<class>com.silverbaytech.blog.jpaschema.model.User</class>
+		<class>com.silverbaytech.blog.jpaschema.model.Comment</class>
+
+		<properties>
+		    <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:h2:./target/databaseExample2" />
+		</properties>
+
+	</persistence-unit>
+		
+	<persistence-unit name="unit-test1">
+		<description>In-memory persistence unit for the JPA 2.1 Schema Generation blog post</description>
+		
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+		<class>com.silverbaytech.blog.jpaschema.model.User</class>
+		<class>com.silverbaytech.blog.jpaschema.model.Comment</class>
+
+		<properties>
+		    <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:" />
+			<property name="javax.persistence.schema-generation.database.action" value="create" />
+		</properties>
+
+	</persistence-unit>
+		
+	<persistence-unit name="unit-test2">
+		<description>In-memory persistence unit for the JPA 2.1 Schema Generation blog post</description>
+		
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+		<class>com.silverbaytech.blog.jpaschema.model.User</class>
+		<class>com.silverbaytech.blog.jpaschema.model.Comment</class>
+
+		<properties>
+		    <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:h2:./target/unitTestExample2" />
+			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create" />
+		</properties>
+
+	</persistence-unit>
+</persistence>

@@ -1,0 +1,1 @@
+create table additional (id integer not null, primary key (id))
