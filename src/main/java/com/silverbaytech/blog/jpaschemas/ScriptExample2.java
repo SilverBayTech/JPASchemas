@@ -54,7 +54,6 @@ public class ScriptExample2
 		catch (Exception e)
 		{
 			e.printStackTrace();
-			;
 		}
 	}
 }
